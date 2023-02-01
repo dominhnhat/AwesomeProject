@@ -86,9 +86,10 @@ export function RootStack() {
   return (
     <Stack.Navigator
       initialRouteName={Config.SELECTED_VARIANT}
-      headerMode={'none'}
       screenOptions={{
         ...(Platform.OS === 'android' && TransitionPresets.SlideFromRightIOS),
+        headerShown: false,
+        headerMode: 'none',
       }}>
       <Stack.Screen name={Routes.SPLASH_SCREEN} component={SplashScreen} />
 
@@ -216,7 +217,9 @@ export function RootStack() {
 
 function bottomTabsVariant1() {
   return (
-    <Tab.Navigator tabBar={props => <Variant1BottomTabBar {...props} />}>
+    <Tab.Navigator
+      screenOptions={{headerShown: false, headerMode: 'none'}}
+      tabBar={props => <Variant1BottomTabBar {...props} />}>
       <Tab.Screen name={Routes.HOME_VARIANT1} component={Variant1Home} />
       <Tab.Screen name={Routes.FAVOURITE} component={Favourites} />
       <Tab.Screen name={Routes.PROFILE1} component={Variant1Profile} />
@@ -227,7 +230,9 @@ function bottomTabsVariant1() {
 
 function bottomTabsVariant2() {
   return (
-    <Tab.Navigator tabBar={props => <Variant2BottomTabBar {...props} />}>
+    <Tab.Navigator
+      screenOptions={{headerShown: false, headerMode: 'none'}}
+      tabBar={props => <Variant2BottomTabBar {...props} />}>
       <Tab.Screen name={Routes.HOME_VARIANT2} component={Variant2Home} />
       <Tab.Screen name={Routes.FAVOURITE} component={Favourites} />
       <Tab.Screen name={Routes.CART} component={CartList} />
@@ -242,7 +247,9 @@ function bottomTabsVariant2() {
 
 function bottomTabsVariant3() {
   return (
-    <Tab.Navigator tabBar={props => <Variant3BottomTabBar {...props} />}>
+    <Tab.Navigator
+      screenOptions={{headerShown: false, headerMode: 'none'}}
+      tabBar={props => <Variant3BottomTabBar {...props} />}>
       <Tab.Screen name={Routes.HOME_VARIANT3} component={Variant3Home} />
       <Tab.Screen name={Routes.FAVOURITE} component={Favourites} />
       <Tab.Screen name={Routes.PROFILE3} component={Variant3Profile} />
